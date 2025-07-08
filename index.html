@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Korku Oyunu</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
-    }
-    button {
-      padding: 15px 30px;
-      font-size: 18px;
-      margin: 20px;
-      background-color: crimson;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: darkred;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karanlığın Sorusu</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Mustafa'nın Korku Oyunu</h1>
-  <p>Hazırsan karanlığa adım at!</p>
-  <button onclick="alert('Oyun başlıyor!')">Başla</button>
-  <button onclick="alert('Kapatılıyor...')">Çık</button>
+    <div id="start-screen" class="game-screen active">
+        <h1>KARANLIĞIN SORUSU</h1>
+        <button id="startButton">BAŞLA</button>
+        <audio id="backgroundMusic" loop></audio>
+    </div>
+
+    <div id="game-play-screen" class="game-screen" style="display:none;">
+        <div class="header">
+            <div id="timer"></div>
+            <div id="hearts"></div>
+        </div>
+        <div class="game-content">
+            <img id="levelImage" src="" alt="Oyun Görseli">
+            <p id="storyText"></p>
+            <p id="questionText"></p>
+        </div>
+        <div class="options">
+            <button id="optionA" class="option-button"></button>
+            <button id="optionB" class="option-button"></button>
+        </div>
+    </div>
+
+    <div id="game-over-screen" class="game-screen" style="display:none;">
+        <img id="gameOverImage" src="" alt="Kaybettiniz">
+        <h2 id="gameOverText"></h2>
+        <button id="restartButton">TEKRAR OYNA</button>
+        <button id="exitButton">ÇIKIŞ</button>
+    </div>
+
+    <div id="win-screen" class="game-screen" style="display:none;">
+        <img id="winImage" src="" alt="Kazandınız">
+        <h2 id="winText"></h2>
+        <button id="winRestartButton">TEKRAR OYNA</button>
+        <button id="winExitButton">ÇIKIŞ</button>
+    </div>
+
+    <script src="game_data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
