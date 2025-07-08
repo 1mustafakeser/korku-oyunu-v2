@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karanlığın Sorusu</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Korku Evinden Kaçış</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="start-screen" class="game-screen active">
-        <h1>KARANLIĞIN SORUSU</h1>
-        <button id="startButton">BAŞLA</button>
-        <audio id="backgroundMusic" loop></audio>
-    </div>
 
-    <div id="game-play-screen" class="game-screen" style="display:none;">
-        <div class="header">
-            <div id="timer"></div>
-            <div id="hearts"></div>
-        </div>
-        <div class="game-content">
-            <img id="levelImage" src="" alt="Oyun Görseli">
-            <p id="storyText"></p>
-            <p id="questionText"></p>
-        </div>
-        <div class="options">
-            <button id="optionA" class="option-button"></button>
-            <button id="optionB" class="option-button"></button>
-        </div>
-    </div>
+  <h1>Korku Evinden Kaçış</h1>
+  <h3>Hayatta kalabilir misin?</h3>
 
-    <div id="game-over-screen" class="game-screen" style="display:none;">
-        <img id="gameOverImage" src="" alt="Kaybettiniz">
-        <h2 id="gameOverText"></h2>
-        <button id="restartButton">TEKRAR OYNA</button>
-        <button id="exitButton">ÇIKIŞ</button>
-    </div>
+  <div id="sahne1" class="sahne">
+    <img src="assets/images/karanlik_koridor.jpg" alt="Karanlık Koridor" />
+    <p>Loş aydınlatılmış sisli eski bir koridordasın...</p>
+    <button class="btn" onclick="sahneGecis(1)">İleri</button>
+  </div>
 
-    <div id="win-screen" class="game-screen" style="display:none;">
-        <img id="winImage" src="" alt="Kazandınız">
-        <h2 id="winText"></h2>
-        <button id="winRestartButton">TEKRAR OYNA</button>
-        <button id="winExitButton">ÇIKIŞ</button>
-    </div>
+  <div id="sahne2" class="sahne" style="display:none;">
+    <img src="assets/images/kanli_kapi.jpg" alt="Kanlı Kapı" />
+    <p>Önünde kanlı, eski bir kapı var. Cesaretin varsa açmalısın.</p>
+    <button class="btn" onclick="sahneGecis(0)">Geri</button>
+    <button class="btn" onclick="sahneGecis(2)">Kapıyı Aç</button>
+  </div>
 
-    <script src="game_data.js"></script>
-    <script src="script.js"></script>
+  <div id="sahne3" class="sahne" style="display:none;">
+    <img src="assets/images/terkedilmis_ev.jpg" alt="Terkedilmiş Ev" />
+    <p>Terk edilmiş evin içinde karanlık ve sessiz bir ortam var.</p>
+    <button class="btn" onclick="sahneGecis(1)">Geri</button>
+    <button class="btn" onclick="sahneGecis(3)">İleri</button>
+  </div>
+
+  <div id="sahne4" class="sahne" style="display:none;">
+    <img src="assets/images/sessiz_oda.jpg" alt="Sessiz Oda" />
+    <p>Sessiz ve terk edilmiş bir odadasın. Dikkatli ol.</p>
+    <button class="btn" onclick="sahneGecis(2)">Geri</button>
+    <button class="btn" onclick="sahneGecis(4)">İleri</button>
+  </div>
+
+  <div id="sahne5" class="sahne" style="display:none;">
+    <img src="assets/images/bos_hastane.jpg" alt="Boş Hastane" />
+    <p>Boş hastane koridorundan geçiyorsun. Korkun artıyor.</p>
+    <button class="btn" onclick="sahneGecis(3)">Geri</button>
+    <button class="btn" onclick="sahneGecis(5)">İleri</button>
+  </div>
+
+  <div id="sahne6" class="sahne" style="display:none;">
+    <img src="assets/images/sisli_orman.jpg" alt="Sisli Orman" />
+    <p>Sisli ormanda yolunu bulmaya çalışıyorsun. Başardın mı?</p>
+    <button class="btn" onclick="sahneGecis(4)">Geri</button>
+    <button class="btn" onclick="oyunBitti()">Oyunu Bitir</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
