@@ -1,48 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karanlığın Sorusu</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <title>Korku Oyunu Test</title>
+    <style>
+        body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { background-color: crimson; color: white; border: none; padding: 15px 30px; margin: 15px; font-size: 20px; cursor: pointer; border-radius: 8px; }
+        button:hover { background-color: darkred; }
+    </style>
 </head>
 <body>
-    <div class="game-container">
-        <!-- Başlangıç Ekranı -->
-        <div id="start-screen" class="game-screen active">
-            <h1>KARANLIĞIN SORUSU</h1>
-            <button id="startButton">BAŞLA</button>
-            <button id="soundToggleButton">Ses: Açık</button>
-        </div>
-
-        <!-- Oyun Ekranı -->
-        <div id="game-play-screen" class="game-screen" style="display:none;">
-            <img id="gameImage" src="" alt="Oyun Görseli" class="game-image">
-            <div class="info-bar">
-                <span id="levelDisplay">Seviye: 1</span>
-                <span id="timerDisplay">Süre: 15</span>
-                <span id="livesDisplay">Can: ❤️❤️❤️</span>
-                <span id="scoreDisplay">Skor: 0</span>
-            </div>
-            <p id="questionText"></p>
-            <div class="button-container">
-                <button id="choiceA"></button>
-                <button id="choiceB"></button>
-            </div>
-        </div>
-
-        <!-- Sonuç Ekranı -->
-        <div id="end-screen" class="game-screen" style="display:none;">
-            <img id="endScreenImage" src="" alt="Sonuç Görseli" class="end-image">
-            <p id="finalMessage"></p>
-            <p id="finalScore"></p>
-            <p id="currentHighScore"></p>
-            <button id="restartButton">Tekrar Oyna</button>
-            <button id="exitButton">Çıkış</button>
-        </div>
-    </div>
-
-    <script src="game_data.js"></script>
-    <script src="script.js"></script>
+    <h1>Korku Oyunu Test Sayfası</h1>
+    <button onclick="alert('Oyun Başladı!')">Başla</button>
+    <button onclick="alert('Çıkış Yapılıyor...')">Çıkış</button>
 </body>
 </html>
